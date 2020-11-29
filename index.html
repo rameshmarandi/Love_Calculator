@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ <style>
+body{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://images.pexels.com/photos/1028707/pexels-photo-1028707.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+header{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+.card-header{
+  background-color: red;
+}
+.card-footer{
+background-color: #079992;
+}
+.card{
+box-shadow: 14px 20px 35px 1px rgba(59,43,59,1);
+}
+ </style>
+  <title>LoveCalculator</title>
+
+</head>
+<body>
+  <header>
+    <div class="card w-50% m-auto text-center">
+      <div class="card-header">LOVE CALCULATOR</div>
+      <div class="card-body">
+        <form action="" class="form-inline w-50% m-auto">
+          <div class="form-group">
+            <input type="text" class="form-control text-center" placeholder="Your Name" id="name">
+          </div>
+          <div> <span class="pl-4 pr-4">+</span> </div>
+          <div class="form-group">
+            <input type="text" class="form-control text-center" placeholder="Love Name" id="lname">
+          </div>
+        </form>
+        <div class="w-75 m-auto">
+          <button class=" btn btn-success w-50 mt-3" id="result" onclick="myfun()">Click</button>
+        </div>
+        <br>
+        <div>
+          <input type="text" name="" value="" id="lovevalue" class="form-control
+          m-auto text-center" placeholder=" Love Percentage">
+        </div>
+      </div>
+      <div class="card-footer">God Bless Your Relationship</div>
+    </div>
+ </header>
+
+ <script>
+
+function myfun(){
+
+  var name = document.getElementById('name').value;
+  var lname = document.getElementById('lname').value;
+  // alert(name);
+
+  if(name == ""){
+    alert("Please Enter Your Name");
+  }
+  else if(name.length <=2){
+    alert("Min Character is 3");
+  }
+  else if (!isNaN(name)) {
+    alert("Only character is allowed.");
+  }
+  else if (/[^a-zA-Z0-9\-\/]/.test(name)) {
+    alert('Special character are not Allowed.');
+  }
+  else if(lname == ""){
+    alert("Please Enter Your Love Name");
+  }
+  else if(lname.length <=2){
+    alert("Min Character is 3");
+  }
+  else if (!isNaN(lname)) {
+    alert("Only character is allowed.");
+  }
+  else if (/[^a-zA-Z0-9\-\/]/.test(lname)) {
+    alert('Address can only contain alphanumeric characters, hyphens(-) and back slashs(\)');
+  }
+  else{
+    var test = Math.floor(Math.random() * 100);
+    document.getElementById('lovevalue').value = test +"%";
+  }
+
+}
+
+ </script>
+</body>
+</html>
